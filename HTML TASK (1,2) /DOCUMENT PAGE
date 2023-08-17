@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <STYLE>
+            h1{text-align: center ;}
 
+        </STYLE>
+    <title>first assignment</title>
+    </head>
+
+    <body style="background-color: rgb(148, 197, 212);">
+       <h1 style="background-color: rgb(15, 143, 248);">Full-Stack Developer</h1>
+       <P style="text-align: start; font-style: normal;">A full-stack developer is a developer or engineer who can build both the front end and the back end of a website. The front end (the parts of a website a user sees and interacts with) and the back end (the behind-the-scenes data storage and processing) require different skill sets. Since full-stack developers are involved with all aspects of the development process, they must have expertise in both.</P>
+       <img src="devp.png"  alt=""  width="500" height="300">
+        <p>A full-stack developer can work in-house or at a computer development company that engineers websites, software, and other components for other businesses.</P>
+<dl>
+    <dt><h2>What does a full-stack developer do?</h2></dt>
+    <dd>Full-stack developers design and create websites and applications for various platforms. A full-stack developer job description might include the following:
+    </dd>
+    <ul>
+        <li>Develop and maintain web services and interfaces</li>
+        <li>Contribute to front-end and back-end development processes</li>
+        <li>Build new product features or APIs</li>
+        <li>Perform tests, troubleshoot software, and fix bugs</li>
+        <li>Collaborate with other departments on projects and sprint</li>
+    </ul>
+</dl>
+<p>The world of full-stack development is large, and many new and evolving technologies continually push the limits of what a full-stack developer can create. Staying on top of cutting-edge technology and techniques in the full-stack development field is one of the many exciting aspects of working in this role.</p>
+<br>
+<h4>According to LinkedIn's 2020 Emerging Jobs Report, the industries with the most jobs are <a href="https://business.linkedin.com/content/dam/me/business/en-us/talent-solutions/emerging-jobs-report/Emerging_Jobs_Report_U.S._FINAL.pdf">PDF LINK FOR THE REPORT</a></h4>
+<br>
+<hr>
+<H2>FRONT-END DEVELOPMENT</H2>
+<a href="https://en.wikipedia.org/wiki/Front-end_web_development"><img src="front.jpg" alt="" width="500" height="300"></a>
+<br>
+<hr>
+<h2>BACK-END DEVELOPMENT</h2>
+<a href="https://en.wikibooks.org/wiki/Web_Development/What_is_a_backend%3F"><img src="backend.webp" alt="" width="500" height="300"></a>
+  <br>
+  <hr>
+</body>
+</html>
