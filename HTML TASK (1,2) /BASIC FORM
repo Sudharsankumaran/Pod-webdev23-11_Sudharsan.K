@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+<title>Registor Form </title>
+<h2 style="text-align: center;">Registration Form</h2><hr></hr>
+</head>
+<body>
+<form>
+<ol>
+<li>Enter your Name</li>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value=""><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value=""><br>
+<li>Enter your Email ID</li>
+    <label for="email">email:</label>
+    <input type="email" id="email" name="email"><br>
+<li>Enter your Date of join</li>
+    <label for="jmonth">Date of join</label>
+    <input type="date" max="2023-12-31" min="2023-01-01" id="jmonth" name="jmonth"><br>
+<li>Enter your resources for course</li>
+    <input type="checkbox" id="resource1" name="resource1" value="lap">
+    <label for="resource1"> I have a laptop</label><br>
+    <input type="checkbox" id="resource3" name="resource2" value="wifi">
+    <label for="resource2"> I have a wifi</label><br>
+    <input type="checkbox" id="resource3" name="resource3" value="Mobile">
+    <label for="resource3"> I have a Mobile</label><br>
+<li>Enter your Phone Number</li>
+    <label for="phone">phone number:</label>
+    <input type="tel" id="phone" name="phone">
+</ol>
+</form>
+<input type="submit" value="Submit">
+</body>
+  </html
