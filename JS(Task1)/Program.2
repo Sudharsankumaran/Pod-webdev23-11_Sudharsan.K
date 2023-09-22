@@ -1,0 +1,33 @@
+2. Write a program in which create a function that takes three numbers and prints the second max.
+
+Program:
+function max(n1,n2,n3){
+    if(n1>=n2 && n1>=n3){
+        if(n2>=n3){
+            console.log('second max value:',n2);
+        }
+        else{
+            console.log('second max value:',n3);
+        }
+    }
+    else if(n2>=n1 && n2>=n3){
+        if(n1>=n3){
+            console.log('second max value:',n1);
+        }
+        else{
+            console.log('second max value:',n3);
+        }
+    }
+    else if(n1>=n2){
+         console.log('second max value:',n1);
+    }
+    else{
+        console.log('second max value:',n2);
+    }
+    
+}max(25,12,37)
+
+output:
+
+second max value: 25
+
