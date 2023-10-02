@@ -1,0 +1,28 @@
+1.Write a program to create a rectangle class that has two properties for length and breadth and a few methods to calculate the area and perimeter. 
+Program:
+
+class Rectangle {
+  constructor(length, breadth) {
+    this.length = length;
+    this.breadth = breadth;
+  }
+
+  calculateArea() {
+    return this.length * this.breadth;
+  }
+
+  calculatePerimeter() {
+    return 2 * (this.length + this.breadth);
+  }
+}
+const rectangle = new Rectangle(7, 3);
+const area = rectangle.calculateArea();
+const perimeter = rectangle.calculatePerimeter();
+console.log('Area of Rectangle:',area);
+console.log('Perimeter of Rectangle',perimeter);
+
+output:
+Area of Rectangle: 21
+Perimeter of Rectangle 20
+
+
