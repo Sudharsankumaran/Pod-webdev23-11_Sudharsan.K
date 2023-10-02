@@ -1,0 +1,23 @@
+2.Write a program to create a function that will take an array of numbers and returns the second max.
+
+Program:
+function secondLargestNumber(arr)  {
+ let first = 0;
+ let second = 0;
+ for (var i = 0; i < arr.length; i++) {
+   if (first < arr[i]){
+     second = first;
+     first = arr[i];
+   }else if (second < arr[i]){
+     second = arr[i];
+   }
+ }
+ console.log("Second Largest Number:",second);
+}
+
+const arr = [2,33,12,90,10,28,24];
+secondLargestNumber(arr);
+
+output:
+
+Second Largest Number: 33
