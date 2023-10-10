@@ -1,0 +1,21 @@
+HTML
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change the background</title>
+    <link rel="stylesheet" href="Task3.css">
+    <link rel="icon" type='image/x-icon' href="C:\Users\ROG\Desktop\san\TASK3\clr.jpeg">
+   <script src="TASK3.JS"></script>
+</head>
+<body>
+    <h1>CLICK BUTTON TO CHANGE COLOR</h1>
+    <div class="contentbox">
+    <div class="buttons1"> <button onclick="changebackground('red')">RED</button></div>
+    <div class="buttons2"><button onclick="changebackground('orange')">ORANGE</button></div>
+    <div class="buttons3"><button onclick="changebackground('green')">GREEN</button></div>
+    </div>
+    
+</body>
+</html>
