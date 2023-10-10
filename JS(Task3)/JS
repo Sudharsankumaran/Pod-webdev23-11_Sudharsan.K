@@ -1,0 +1,5 @@
+JavaScript
+
+function changebackground(color){
+    document.querySelector('.contentbox').style.backgroundColor = color;
+}
