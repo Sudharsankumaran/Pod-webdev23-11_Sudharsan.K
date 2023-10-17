@@ -1,0 +1,46 @@
+CSS
+
+* {
+    padding: 0;
+    margin: 0;
+   
+   
+}
+body{
+    background-image: url(mappic.jpg);
+}
+.h2{
+    display: flex;
+    justify-content: center;
+}
+.searchbox{
+    justify-content: center;
+}
+.container{
+   text-align: center;
+}
+.container .flag-img {
+    display: block;
+    width: 45%;
+    margin: 1.8em auto 1.2em auto;
+}
+#searchenginee{
+    font-size: 15px;
+    padding: 1px;
+    border: solid black;
+    color: black;
+}
+#buttons{
+    font-size: 15px;
+    padding: 1px;
+    border: solid black;
+    color: black;}
+h4{
+    font-size: 25px;
+}
+h2{
+    font-size: 30px;
+    font-weight: 900px;
+    padding-bottom: 2px;
+    
+}
