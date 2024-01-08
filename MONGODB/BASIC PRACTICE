@@ -1,54 +1,9 @@
 
-C:\Users\ROG>mongosh
-Current Mongosh Log ID: 659bb2ff697c30009d26108b
-Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.1
-Using MongoDB:          7.0.5
-Using Mongosh:          2.1.1
 
-For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
 
-
-
-test> use sandb
-switched to db sandb
-sandb> show dbs
-admin    40.00 KiB
-config   96.00 KiB
-library  56.00 KiB
-local    40.00 KiB
-sandb> db.practice.insertOne({name:'san',age:21})
-{
-  acknowledged: true,
-  insertedId: ObjectId('659bb44b697c30009d26108c')
-}
-sandb> db.practice.find()
-[ { _id: ObjectId('659bb44b697c30009d26108c'), name: 'san', age: 21 } ]
-sandb> db.practice.update({ name: 'Toy1' }, { $set: { color: 'Blue' } })
-DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
-{
-  acknowledged: true,
-  insertedId: null,
-  matchedCount: 0,
-  modifiedCount: 0,
-  upsertedCount: 0
-}
-sandb> db.practice.remove({ name: 'Toy1' })
-DeprecationWarning: Collection.remove() is deprecated. Use deleteOne, deleteMany, findOneAndDelete, or bulkWrite.
-{ acknowledged: true, deletedCount: 0 }
-sandb> db.practice.find()
-[ { _id: ObjectId('659bb44b697c30009d26108c'), name: 'san', age: 21 } ]
-sandb> exit
-
-C:\Users\ROG>use sandb
-'use' is not recognized as an internal or external command,
-operable program or batch file.
-
-C:\Users\ROG>mangoose
-'mangoose' is not recognized as an internal or external command,
-operable program or batch file.
-
-C:\Users\ROG>mongosh
-Current Mongosh Log ID: 659bbd9a830ed147b616a15b
+PS C:\Users\ROG> mongosh
+Current Mongosh Log ID: 659bd5e179a6e39a8435443a
 Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.1.1
 Using MongoDB:          7.0.5
 Using Mongosh:          2.1.1
@@ -56,12 +11,141 @@ Using Mongosh:          2.1.1
 For mongosh info see: https://docs.mongodb.com/mongodb-shell/
 
 ------
+ 
 test> use sandb
 switched to db sandb
-sandb> db.find()
-TypeError: db.find is not a function
-sandb> db.pratice.find()
-
+sandb> show dbs
+admin     40.00 KiB
+config   108.00 KiB
+library   56.00 KiB
+local     40.00 KiB
+sandb     40.00 KiB
 sandb> db.practice.find()
 [ { _id: ObjectId('659bb44b697c30009d26108c'), name: 'san', age: 21 } ]
-sandb> db.pratice.insert
+sandb> db.practice.insert({ name: "Toy1", color: "Red", shape: "Square" });
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId('659bd6dd79a6e39a8435443b') }
+}
+sandb> db.practice.find().pretty();
+[
+  { _id: ObjectId('659bb44b697c30009d26108c'), name: 'san', age: 21 },
+  {
+    _id: ObjectId('659bd6dd79a6e39a8435443b'),
+    name: 'Toy1',
+    color: 'Red',
+    shape: 'Square'
+  }
+]
+sandb> db.practice.updateOne(
+...    { name: "Toy1" }, 
+...    { $set: { color: "Green" } }
+... );
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+sandb> db.practice.find().pretty();
+[
+  { _id: ObjectId('659bb44b697c30009d26108c'), name: 'san', age: 21 },
+  {
+    _id: ObjectId('659bd6dd79a6e39a8435443b'),
+    name: 'Toy1',
+    color: 'Green',
+    shape: 'Square'
+  }
+]
+
+sandb> db.practice.updateMany(
+...    { name: { $in: ["Toy 3", "Toy 5"] } },
+...    { $set: { color: "Purple", shape: "Star" } }
+... );
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+
+
+
+
+sandb> db.practice.updateMany(
+...    {},
+...    { $set: { status: "Updated" } }
+... );
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 4,
+  modifiedCount: 4,
+  upsertedCount: 0
+}
+sandb> db.practice.find().pretty();
+[
+  {
+    _id: ObjectId('659bb44b697c30009d26108c'),
+    name: 'san',
+    age: 21,
+    status: 'Updated'
+  },
+  {
+    _id: ObjectId('659bd6dd79a6e39a8435443b'),
+    name: 'Toy1',
+    color: 'Green',
+    shape: 'Square',
+    status: 'Updated'
+  },
+  {
+    _id: ObjectId('659bdb4879a6e39a8435443c'),
+    name: 'New Toy 1',
+    color: 'Green',
+    shape: 'Circular',
+    status: 'Updated'
+  },
+  {
+    _id: ObjectId('659bdb4879a6e39a8435443d'),
+    name: 'New Toy 2',
+    color: 'Blue',
+    shape: 'Triangle',
+    status: 'Updated'
+  }
+]
+sandb> db.practice.insertMany([
+...     { name: "Car 1", color: "Blue", shape: "Sedan" },
+...     { name: "Car 2", color: "Red", shape: "SUV" },
+...     { name: "Car 3", color: "Silver", shape: "Coupe" }
+... ]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('659bdeb279a6e39a8435443e'),
+    '1': ObjectId('659bdeb279a6e39a8435443f'),
+    '2': ObjectId('659bdeb279a6e39a84354440')
+  }
+}
+
+
+
+sandb> db.practice.deleteMany(
+...    { name: { $in: ["New Toy 1", "New Toy 2"] } }
+... );
+{ acknowledged: true, deletedCount: 2 }
+
+
+
+
+
+find comment---
+sandb> db.practice.findOne({ color: "Silver" });
+{
+  _id: ObjectId('659bdeb279a6e39a84354440'),
+  name: 'Car 3',
+  color: 'Silver',
+  shape: 'Coupe'
+}
