@@ -1,0 +1,43 @@
+function searchWord() {
+    const wordInput = document.getElementById('wordInput').value.trim();
+
+    // Regular expression to validate if the input contains only alphabets
+    const isValidInput = /^[a-zA-Z]+$/.test(wordInput);
+
+    if (!isValidInput) {
+        alert('Please enter a valid word containing only alphabets');
+        return;
+    }
+
+    fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${wordInput}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Word not found in the dictionary');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const meanings = data[0]?.meanings;
+            if (meanings && meanings.length > 0) {
+                const firstMeaning = meanings[0];
+                const partOfSpeech = firstMeaning.partOfSpeech;
+                const firstDefinition = firstMeaning.definitions[0].definition;
+
+                let meaningHTML = `
+                    <h2>Word: ${wordInput}</h2>
+                    <div>
+                        <h3>Part of Speech: ${partOfSpeech}</h3>
+                        <p>Definition: ${firstDefinition}</p>
+                    </div>
+                `;
+
+                document.getElementById('meaningDisplay').innerHTML = meaningHTML;
+            } else {
+                document.getElementById('meaningDisplay').innerHTML = '<p>No meanings found for the word.</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            document.getElementById('meaningDisplay').innerHTML = '<p>Sorry, something went wrong. Please try again later.</p>';
+        });
+}
