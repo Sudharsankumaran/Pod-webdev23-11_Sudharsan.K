@@ -43,5 +43,6 @@ body {
   #meaningDisplay {
     margin-top: 20px;
     text-align: left;
+    padding: 30px 60px;
   }
   
